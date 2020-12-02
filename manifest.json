@@ -1,0 +1,36 @@
+{
+  "author": "Jenny Judova",
+  "manifest_version": 2,
+  "name": "Dictionary Plugin",
+  "version": "1.0",
+  "description": "To see the meaning of the word press AltKey and double click.",
+  "icons": {
+    "48": "icons/pigeon-48.png",
+    "64": "icons/pigeon-64.png",
+    "96": "icons/pigeon-96.png",
+    "128": "icons/pigeon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "common/browser-polyfill.js",
+        "content_scripts/dictionary.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "dictionary.json"
+  ],
+  "background": {
+    "scripts": [
+      "common/browser-polyfill.js"
+    ],
+    "persistent": false
+  },
+  "permissions": [
+    "storage"
+  ]
+}
